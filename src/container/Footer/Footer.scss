@@ -129,3 +129,18 @@
     margin: 1rem 0;
   }
 }
+
+.copyrt {
+  margin-top: auto;
+  margin-top: 10px;
+  margin-bottom: -30px;
+}
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  svg {
+    margin-right: 5px;
+  }
+}

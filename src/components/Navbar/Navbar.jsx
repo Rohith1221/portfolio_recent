@@ -14,14 +14,25 @@ const Navbar = () => {
         <h1 className="portfolio_name">ROHITH</h1>
       </div>
       <ul className="app__navbar-links">
-        {["Home", "About", "Work", "skills", "Contact"].map((item) => {
-          return (
-            <li className="app__flex p-text" key={`link-${item}`}>
-              <div />
-              <a href={`#${item}`}>{item}</a>
-            </li>
-          );
-        })}
+        {["Home", "About", "Work", "skills", "Contact", "Resume"].map(
+          (item) => {
+            return (
+              <li className="app__flex p-text" key={`link-${item}`}>
+                <div />
+                {item === "Resume" ? (
+                  <a
+                    href="https://drive.google.com/file/d/1G955qQ5g_llxOUR8DxdAPzaESQODkZ9k/view?usp=sharing"
+                    target="_blank"
+                  >
+                    {item}
+                  </a>
+                ) : (
+                  <a href={`#${item}`}>{item}</a>
+                )}
+              </li>
+            );
+          }
+        )}
       </ul>
       <div className="app__navbar-menu">
         <HiMenuAlt4 onClick={() => setToggle(true)}></HiMenuAlt4>
@@ -32,15 +43,27 @@ const Navbar = () => {
           >
             <HiX onClick={() => setToggle(false)} />
             <ul>
-              {["Home", "About", "Work", "skills", "Contact"].map((item) => {
-                return (
-                  <li key={item}>
-                    <a href={`#${item}`} onClick={() => setToggle(false)}>
-                      {item}
-                    </a>
-                  </li>
-                );
-              })}
+              {["Home", "About", "Work", "skills", "Contact", "Resume"].map(
+                (item) => {
+                  return (
+                    <li key={item}>
+                      {item === "Resume" ? (
+                        <a
+                          href="https://drive.google.com/file/d/1G955qQ5g_llxOUR8DxdAPzaESQODkZ9k/view?usp=sharing"
+                          target="_blank"
+                          onClick={() => setToggle(false)}
+                        >
+                          {item}
+                        </a>
+                      ) : (
+                        <a href={`#${item}`} onClick={() => setToggle(false)}>
+                          {item}
+                        </a>
+                      )}
+                    </li>
+                  );
+                }
+              )}
             </ul>
           </motion.div>
         )}

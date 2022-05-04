@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import { FaCopyright } from "react-icons/fa";
+
 import { images } from "../../constants";
 import { AppWrap, MotionWrap } from "../../wrapper/index";
 import { client } from "../../client";
@@ -97,6 +99,12 @@ const Footer = () => {
           <h3 className="head-text">Thank you for getting in touch!</h3>
         </div>
       )}
+      <center>
+        <footer className="copyrt">
+          <FaCopyright />
+          <span> </span> Made by Rohith 2022
+        </footer>
+      </center>
     </>
   );
 };
